@@ -1,0 +1,57 @@
+/* ================== BODY ================== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+    /* FUNDO */
+    background: linear-gradient(135deg, #1f2933, #111827);
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 30px;
+}
+
+/* ================== CONTEÚDO ================== */
+/* Usa esta classe no conteúdo principal */
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* ================== BOTÕES ================== */
+button {
+    width: 220px;
+    margin: 8px 0;
+    padding: 15px 0;
+    font-size: 16px;
+
+    border: none;
+    border-radius: 8px;
+    background: #8f545d;
+    color: white;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: scale(1.03);
+}
+
+/* ================== FOOTER ================== */
+.footer {
+    margin-top: auto;
+    width: 100%;
+    padding: 15px 0;
+
+    text-align: center;
+    font-size: 13px;
+    color: #9ca3af;
+
+    pointer-events: none;
+}

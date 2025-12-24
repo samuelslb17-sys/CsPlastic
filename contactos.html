@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+
+            /* FUNDO IGUAL */
+            background: linear-gradient(135deg, #1f2933, #111827);
+            color: #ffffff;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: #020617;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e5e7eb;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #020617;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        th {
+            background: #2563eb;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: rgba(255,255,255,0.04);
+        }
+
+        a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* BOTÃO VOLTAR */
+        .voltar {
+            display: block;
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px 0;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .voltar:hover {
+            background: #1d4ed8;
+            transform: scale(1.02);
+        }
+
+        a.btn {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Contactos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telemóvel</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Numero 1</td>
+                <td>+1 234 567 890</td>
+                <td>Numero1@csplastic.pt</td>
+            </tr>
+            <tr>
+                <td>Numero 2</td>
+                <td>+1 987 654 321</td>
+                <td>Numero2@csplastic.pt</td>
+            </tr>
+            <tr>
+                <td>Numero 3</td>
+                <td>+1 555 123 456</td>
+                <td>Numero3@csplastic.pt</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="index.html" class="btn">
+        <button class="voltar">🏠 Voltar à página inicial</button>
+    </a>
+</div>
+<footer class="footer">
+    <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #020617;
+            border-top: 1px solid #1e293b;
+            padding: 15px;
+            text-align: center;
+            color: #cbd5f5;
+            font-size: 14px;
+        }
+    </style>
+    © 2025 CsPlastic · Todos os direitos reservados
+</body>
+</html>

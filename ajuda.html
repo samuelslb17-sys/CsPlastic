@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Equipamentos</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f2933, #111827);
+            color: #ffffff;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: #020617;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #e5e7eb;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;   /* 👈 tudo alinhado ao centro */
+            gap: 20px;
+            background: #020617;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #1e293b;
+        }
+
+        .item img {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            background: #020617;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-content h3 {
+            margin: 0 0 10px 0;
+            color: #e5e7eb;
+        }
+
+        .item-content p {
+            margin: 0;
+            color: #cbd5f5;
+            line-height: 1.5;
+        }
+
+        .voltar {
+            display: block;
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px 0;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .voltar:hover {
+            background: #1d4ed8;
+            transform: scale(1.02);
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Equipamentos do Processo</h1>
+
+    <!-- TERMORREGULADORES -->
+    <div class="item">
+        <img src="Termo.jpg" alt="Termorreguladores">
+        <div class="item-content">
+            <h3>Termorreguladores</h3>
+            <p>
+                Equipamento responsável por controlar a temperatura do molde,
+                garantindo estabilidade térmica e qualidade dimensional das peças.
+            </p>
+        </div>
+    </div>
+
+    <!-- ESTUFA -->
+    <div class="item">
+        <img src="Estufa.jpg" alt="Estufa de secagem">
+        <div class="item-content">
+            <h3>Estufa de secagem de material</h3>
+            <p>
+                Utilizada para remover a humidade do material plástico antes da injeção,
+                prevenindo defeitos como incompletos, bolhas, manchas e raiados.
+            </p>
+        </div>
+    </div>
+
+    <!-- MOLDE -->
+    <div class="item">
+        <img src="Molde.jpg" alt="Molde de injeção">
+        <div class="item-content">
+            <h3>Molde de injeção</h3>
+            <p>
+                Ferramenta metálica onde o material plástico é injetado,
+                responsável pela forma final e qualidade da peça produzida.
+            </p>
+        </div>
+    </div>
+
+    <!-- MÁQUINA DE INJEÇÃO -->
+    <div class="item">
+        <img src="MaquinaInjecao.jpg" alt="Máquina de injeção">
+        <div class="item-content">
+            <h3>Máquina de injeção</h3>
+            <p>
+                Equipamento principal do processo de injeção de plásticos,
+                responsável por plastificar o material e injetá-lo no molde
+                com pressão, velocidade e temperatura controladas.
+            </p>
+        </div>
+    </div>
+
+    <!-- FOLHA DE AFINAÇÃO -->
+<div class="item">
+    <img src="FolhaAfinacao.jpg" alt="Folha de afinação">
+    <div class="item-content">
+        <h3>Folha de afinação</h3>
+        <p>
+            Documento técnico utilizado para registar e controlar os parâmetros
+            do processo de injeção, como temperaturas, pressões, tempos de ciclo
+            e velocidades. Garante repetibilidade do processo, qualidade constante
+            das peças e facilita ajustes e resolução de problemas.
+        </p>
+    </div>
+</div>
+
+
+    <a href="index.html">
+        <button class="voltar">🏠 Voltar à página de início</button>
+    </a>
+</div>
+</body>
+</html>
