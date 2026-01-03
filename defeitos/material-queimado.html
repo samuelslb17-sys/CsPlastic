@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material queimado</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f2933, #111827);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: #020617;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e5e7eb;
+        }
+
+        .item {
+            display: none;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item.active {
+            display: flex;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 14px;
+            cursor: pointer;
+            accent-color: #2563eb;
+        }
+
+        label {
+            cursor: pointer;
+            flex: 1;
+            color: #d1d5db;
+        }
+
+        .voltar {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px 0;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .voltar:hover {
+            background: #1d4ed8;
+            transform: scale(1.02);
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Checklist de ajuda para material queimado</h1>
+
+    <div class="item active">
+        <input type="checkbox" id="item1">
+        <label for="item1">1️⃣ Estufa cheia</label>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" id="item2">
+        <label for="item2">2️⃣ Termorreguladores ligados / Águas abertas</label>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" id="item3">
+        <label for="item3">3️⃣ Bico não está a babar</label>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" id="item4">
+        <label for="item4">4️⃣ Almofada igual à folha de afinação</label>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" id="item5">
+        <label for="item5">5️⃣ Limpar o molde (PIN obrigatório)</label>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" id="item6">
+        <label for="item6">6️⃣ Ajustar pressão</label>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" id="item7">
+        <label for="item7">7️⃣ Confirmar temperatura</label>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" id="item8">
+        <label for="item8">8️⃣ Teste de injeção</label>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" id="item9">
+        <label for="item9">9️⃣ Produzir</label>
+    </div>
+
+    <a href="../defeitos.html">
+        <button class="voltar">🏠 Voltar à página de defeitos</button>
+    </a>
+</div>
+
+<script>
+    const items = document.querySelectorAll(".item");
+    const PIN_CORRETO = "1234"; // ← altera aqui o PIN
+
+    items.forEach((item, index) => {
+        const checkbox = item.querySelector("input");
+
+        checkbox.addEventListener("change", () => {
+
+            // Itens 1 → 4 (sequencial normal)
+            if (index < 4 && checkbox.checked && items[index + 1]) {
+                items[index + 1].classList.add("active");
+            }
+
+            // Item 5 → pedir PIN
+            if (index === 4 && checkbox.checked) {
+                const pin = prompt("🔒 Introduza o PIN de 4 dígitos:");
+
+                if (pin === PIN_CORRETO) {
+                    for (let i = 5; i < items.length; i++) {
+                        items[i].classList.add("active");
+                    }
+                    alert("✅ PIN correto. Acesso autorizado.");
+                } else {
+                    alert("❌ PIN incorreto!");
+                    checkbox.checked = false;
+                }
+            }
+        });
+    });
+</script>
+<a href="../ajuda.html" class="help-btn"><button>?</button></a>
+</body>
+</html>

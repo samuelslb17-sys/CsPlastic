@@ -5,9 +5,9 @@
     <title>Defeitos</title>
 
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
 
     <style>
+        /* ================== BODY ================== */
         body {
             margin: 0;
             min-height: 100vh;
@@ -17,41 +17,200 @@
             text-align: center;
             font-family: Arial, sans-serif;
             padding-top: 30px;
+            background: linear-gradient(135deg, #1f2933, #111827);
+            color: white;
         }
 
         h4 {
             margin-bottom: 25px;
+            color: #d1d5db;
         }
 
         a {
             text-decoration: none;
         }
 
-        button {
-            width: 220px;
+        /* ================== LINHA DEFEITO ================== */
+        .defeito-linha {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin: 8px 0;
+            position: relative;
+        }
+
+        /* ================== BOTÃO PRINCIPAL ================== */
+        .btn-defeito {
+            width: 220px;
             padding: 15px 0;
             font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
             cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-defeito:hover {
+            background: #1d4ed8;
+            transform: scale(1.03);
+        }
+
+        /* ================== BOTÃO PREVIEW ================== */
+        .btn-preview {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            background: #020617;
+            color: white;
+            transition: 0.2s;
+        }
+
+        .btn-preview:hover {
+            background: #374151;
+        }
+
+        /* ================== IMAGEM ================== */
+        .preview {
+            position: absolute;
+            left: 290px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            background: #020617;
+            padding: 8px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.2s ease;
+            z-index: 1000;
+        }
+
+        .preview img {
+            width: 220px;
+            border-radius: 8px;
+        }
+
+        /* Mostrar imagem ao hover do botão 👁️ */
+        .btn-preview:hover + .preview {
+            opacity: 1;
+        }
+
+        /* ================== MOBILE ================== */
+        @media (max-width: 768px) {
+            .preview {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Defeitos</h1>
-    <h4>Escolher o defeito que deseja resolver</h4>
-<a href="incompletos.html"><button>❌ Incompletos</button></a>
-<a href="queimados.html"><button>🔥 Queimados</button></a>
-<a href="rebarba.html"><button>▧ Rebarba</button></a>
-<a href="raiados.html"><button>〰️ Raiados</button></a>
-<a href="material-queimado.html"><button>🔥⚫ Material queimado</button></a>
-<a href="miscibilidade.html"><button>🧪 Miscibilidade</button></a>
-<a href="empeno.html"><button>📐 Empeno</button></a>
-<a href="brilhos.html"><button>✨ Brilhos</button></a>
-<a href="chupados.html"><button>🕳️ Chupados</button></a>
-<a href="linhas-uniao.html"><button>➖ Linhas de união</button></a>
-<a href="index.html"><button>🏠 Voltar à página inicial</button></a>
+<h1>Defeitos</h1>
+<h4>Escolher o defeito que deseja resolver</h4>
+
+<!-- INCOMPLETOS -->
+<div class="defeito-linha">
+    <a href="defeitos/incompletos.html">
+        <button class="btn-defeito">❌ Incompletos</button>
+    </a>
+    <button class="btn-preview">👁️</button>
+    <div class="preview"><img src="imagens/incompletos.jpg"></div>
+</div>
+
+<!-- QUEIMADOS -->
+<div class="defeito-linha">
+    <a href="defeitos/queimados.html">
+        <button class="btn-defeito">🔥 Queimados</button>
+    </a>
+    <button class="btn-preview">👁️</button>
+    <div class="preview"><img src="imagens/queimados.jpg"></div>
+</div>
+
+<!-- REBARBA -->
+<div class="defeito-linha">
+    <a href="defeitos/rebarba.html">
+        <button class="btn-defeito">▧ Rebarba</button>
+    </a>
+    <button class="btn-preview">👁️</button>
+    <div class="preview"><img src="imagens/rebarba.jpg"></div>
+</div>
+
+<!-- RAIADOS -->
+<div class="defeito-linha">
+    <a href="defeitos/raiados.html">
+        <button class="btn-defeito">〰️ Raiados</button>
+    </a>
+    <button class="btn-preview">👁️</button>
+    <div class="preview"><img src="imagens/raiados.jpg"></div>
+</div>
+
+<!-- MATERIAL QUEIMADO -->
+<div class="defeito-linha">
+    <a href="defeitos/material-queimado.html">
+        <button class="btn-defeito">🔥⚫ Material queimado</button>
+    </a>
+    <button class="btn-preview">👁️</button>
+    <div class="preview"><img src="imagens/material-queimado.jpg"></div>
+</div>
+
+<!-- MISCIBILIDADE -->
+<div class="defeito-linha">
+    <a href="defeitos/miscibilidade.html">
+        <button class="btn-defeito">🧪 Miscibilidade</button>
+    </a>
+    <button class="btn-preview">👁️</button>
+    <div class="preview"><img src="imagens/miscibilidade.jpg"></div>
+</div>
+
+<!-- EMPENO -->
+<div class="defeito-linha">
+    <a href="defeitos/empeno.html">
+        <button class="btn-defeito">📐 Empeno</button>
+    </a>
+    <button class="btn-preview">👁️</button>
+    <div class="preview"><img src="imagens/empeno.jpg"></div>
+</div>
+
+<!-- BRILHOS -->
+<div class="defeito-linha">
+    <a href="defeitos/brilhos.html">
+        <button class="btn-defeito">✨ Brilhos</button>
+    </a>
+    <button class="btn-preview">👁️</button>
+    <div class="preview"><img src="imagens/brilhos.jpg"></div>
+</div>
+
+<!-- CHUPADOS -->
+<div class="defeito-linha">
+    <a href="defeitos/chupados.html">
+        <button class="btn-defeito">🕳️ Chupados</button>
+    </a>
+    <button class="btn-preview">👁️</button>
+    <div class="preview"><img src="imagens/chupados.jpg"></div>
+</div>
+
+<!-- LINHAS DE UNIÃO -->
+<div class="defeito-linha">
+    <a href="defeitos/linhas-uniao.html">
+        <button class="btn-defeito">➖ Linhas de união</button>
+    </a>
+    <button class="btn-preview">👁️</button>
+    <div class="preview"><img src="imagens/linhas-uniao.jpg"></div>
+</div>
+
+<br>
+
+<a href="index.html">
+    <button class="btn-defeito">🏠 Voltar à página inicial</button>
+</a>
 
 </body>
 </html>

@@ -8,6 +8,8 @@ body {
     background: linear-gradient(135deg, #1f2933, #111827);
     color: #ffffff;
 
+    /* ⚠️ Mantém flex para layout,
+       mas NÃO interfere com elementos fixed */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +22,9 @@ body {
 .container {
     width: 100%;
     max-width: 900px;
+
+    /* ❗ Garante que não cria contexto estranho */
+    position: relative;
 }
 
 /* ================== BOTÕES ================== */
@@ -43,6 +48,39 @@ button:hover {
     transform: scale(1.03);
 }
 
+/* ================== BOTÃO AJUDA ================== */
+.help-btn {
+    /* 🔑 FORÇADO PARA O ECRÃ */
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+
+    width: 52px;
+    height: 52px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    border-radius: 50%;
+    text-align: center;
+    line-height: 52px;
+
+    text-decoration: none;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    transition: 0.2s;
+
+    z-index: 99999; /* 🔥 acima de tudo */
+}
+
+.help-btn:hover {
+    background: #1d4ed8;
+    transform: scale(1.1);
+}
+
 /* ================== FOOTER ================== */
 .footer {
     margin-top: auto;
@@ -52,6 +90,10 @@ button:hover {
     text-align: center;
     font-size: 13px;
     color: #9ca3af;
+}
 
+/* ❌ NÃO bloquear cliques globalmente
+.footer {
     pointer-events: none;
 }
+*/
